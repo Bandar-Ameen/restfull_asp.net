@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="orderapiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ClientMasterٌٌRf">
+          <Key>
+            <PropertyRef Name="ClientKeyId" />
+          </Key>
+          <Property Name="ClientKeyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClientID" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="ClientSecret" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="ClientName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="RefreshTokenLifeTime" Type="int" Nullable="false" />
+          <Property Name="AllowedOrigin" Type="varchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="prodactacoun">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="namear" Type="nvarchar" MaxLength="50" />
+          <Property Name="nameen" Type="nvarchar" MaxLength="50" />
+          <Property Name="groupID" Type="int" />
+          <Property Name="barcode" Type="nvarchar" MaxLength="50" />
+          <Property Name="rabtwithmored" Type="bit" />
+          <Property Name="IDformred" Type="int" />
+          <Property Name="enable" Type="bit" />
+          <Property Name="dateexpire" Type="bit" />
+          <Property Name="cashonly" Type="bit" />
+          <Property Name="notback" Type="bit" />
+          <Property Name="backamount" Type="bit" />
+          <Property Name="backday" Type="int" />
+          <Property Name="manfacture" Type="nvarchar" MaxLength="50" />
+          <Property Name="hightt" Type="float" />
+          <Property Name="wedthh" Type="float" />
+          <Property Name="ertfah" Type="float" />
+          <Property Name="wazen" Type="float" />
+          <Property Name="reoreder" Type="int" />
+          <Property Name="detalis" Type="nvarchar" MaxLength="50" />
+          <Property Name="multiparcod" Type="bit" />
+          <Property Name="notifiexpiredateday" Type="bit" />
+          <Property Name="notifiexpiredate" Type="bit" />
+          <Property Name="notexitinstock" Type="bit" />
+        </EntityType>
+        <EntityType Name="RefreshTokenRf">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="500" />
+          <Property Name="ClientID" Type="varchar" MaxLength="500" />
+          <Property Name="IssuedTime" Type="datetime" />
+          <Property Name="ExpiredTime" Type="datetime" />
+          <Property Name="ProtectedTicket" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="UserMaster">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="UserPassword" Type="varchar" MaxLength="50" />
+          <Property Name="UserRoles" Type="varchar" MaxLength="500" />
+          <Property Name="UserEmailID" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="orderapiModelStoreContainer">
+          <EntitySet Name="ClientMasterٌٌRf" EntityType="Self.ClientMasterٌٌRf" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="prodactacoun" EntityType="Self.prodactacoun" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RefreshTokenRf" EntityType="Self.RefreshTokenRf" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserMaster" EntityType="Self.UserMaster" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="orderapiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ClientMaster__Rf">
+          <Key>
+            <PropertyRef Name="ClientKeyId" />
+          </Key>
+          <Property Name="ClientKeyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClientID" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ClientSecret" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ClientName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="RefreshTokenLifeTime" Type="Int32" Nullable="false" />
+          <Property Name="AllowedOrigin" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="prodactacoun">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="namear" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nameen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="groupID" Type="Int32" />
+          <Property Name="barcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="rabtwithmored" Type="Boolean" />
+          <Property Name="IDformred" Type="Int32" />
+          <Property Name="enable" Type="Boolean" />
+          <Property Name="dateexpire" Type="Boolean" />
+          <Property Name="cashonly" Type="Boolean" />
+          <Property Name="notback" Type="Boolean" />
+          <Property Name="backamount" Type="Boolean" />
+          <Property Name="backday" Type="Int32" />
+          <Property Name="manfacture" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hightt" Type="Double" />
+          <Property Name="wedthh" Type="Double" />
+          <Property Name="ertfah" Type="Double" />
+          <Property Name="wazen" Type="Double" />
+          <Property Name="reoreder" Type="Int32" />
+          <Property Name="detalis" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="multiparcod" Type="Boolean" />
+          <Property Name="notifiexpiredateday" Type="Boolean" />
+          <Property Name="notifiexpiredate" Type="Boolean" />
+          <Property Name="notexitinstock" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="RefreshTokenRf">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ClientID" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="IssuedTime" Type="DateTime" Precision="3" />
+          <Property Name="ExpiredTime" Type="DateTime" Precision="3" />
+          <Property Name="ProtectedTicket" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UserMaster">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserRoles" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="UserEmailID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="orderapiEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ClientMaster__Rf" EntityType="Self.ClientMaster__Rf" />
+          <EntitySet Name="prodactacoun" EntityType="Self.prodactacoun" />
+          <EntitySet Name="RefreshTokenRf" EntityType="Self.RefreshTokenRf" />
+          <EntitySet Name="UserMaster" EntityType="Self.UserMaster" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="orderapiModelStoreContainer" CdmEntityContainer="orderapiEntities1">
+          <EntitySetMapping Name="ClientMaster__Rf">
+            <EntityTypeMapping TypeName="orderapiModel.ClientMaster__Rf">
+              <MappingFragment StoreEntitySet="ClientMasterٌٌRf">
+                <ScalarProperty Name="ClientKeyId" ColumnName="ClientKeyId" />
+                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+                <ScalarProperty Name="ClientSecret" ColumnName="ClientSecret" />
+                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="RefreshTokenLifeTime" ColumnName="RefreshTokenLifeTime" />
+                <ScalarProperty Name="AllowedOrigin" ColumnName="AllowedOrigin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="prodactacoun">
+            <EntityTypeMapping TypeName="orderapiModel.prodactacoun">
+              <MappingFragment StoreEntitySet="prodactacoun">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="namear" ColumnName="namear" />
+                <ScalarProperty Name="nameen" ColumnName="nameen" />
+                <ScalarProperty Name="groupID" ColumnName="groupID" />
+                <ScalarProperty Name="barcode" ColumnName="barcode" />
+                <ScalarProperty Name="rabtwithmored" ColumnName="rabtwithmored" />
+                <ScalarProperty Name="IDformred" ColumnName="IDformred" />
+                <ScalarProperty Name="enable" ColumnName="enable" />
+                <ScalarProperty Name="dateexpire" ColumnName="dateexpire" />
+                <ScalarProperty Name="cashonly" ColumnName="cashonly" />
+                <ScalarProperty Name="notback" ColumnName="notback" />
+                <ScalarProperty Name="backamount" ColumnName="backamount" />
+                <ScalarProperty Name="backday" ColumnName="backday" />
+                <ScalarProperty Name="manfacture" ColumnName="manfacture" />
+                <ScalarProperty Name="hightt" ColumnName="hightt" />
+                <ScalarProperty Name="wedthh" ColumnName="wedthh" />
+                <ScalarProperty Name="ertfah" ColumnName="ertfah" />
+                <ScalarProperty Name="wazen" ColumnName="wazen" />
+                <ScalarProperty Name="reoreder" ColumnName="reoreder" />
+                <ScalarProperty Name="detalis" ColumnName="detalis" />
+                <ScalarProperty Name="multiparcod" ColumnName="multiparcod" />
+                <ScalarProperty Name="notifiexpiredateday" ColumnName="notifiexpiredateday" />
+                <ScalarProperty Name="notifiexpiredate" ColumnName="notifiexpiredate" />
+                <ScalarProperty Name="notexitinstock" ColumnName="notexitinstock" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RefreshTokenRf">
+            <EntityTypeMapping TypeName="orderapiModel.RefreshTokenRf">
+              <MappingFragment StoreEntitySet="RefreshTokenRf">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+                <ScalarProperty Name="IssuedTime" ColumnName="IssuedTime" />
+                <ScalarProperty Name="ExpiredTime" ColumnName="ExpiredTime" />
+                <ScalarProperty Name="ProtectedTicket" ColumnName="ProtectedTicket" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserMaster">
+            <EntityTypeMapping TypeName="orderapiModel.UserMaster">
+              <MappingFragment StoreEntitySet="UserMaster">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+                <ScalarProperty Name="UserRoles" ColumnName="UserRoles" />
+                <ScalarProperty Name="UserEmailID" ColumnName="UserEmailID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
